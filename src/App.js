@@ -4,6 +4,11 @@ import { Octokit } from "@octokit/core";
 import { timeFormatter } from "./helpers/timeFormatter";
 
 export default function App() {
+  
+  // Repository information
+  const repoName = "Git-Commit-History";
+  const ownerName = "jp024556";
+  
   // Check if localStorage already have token
   let storedKey = localStorage.getItem("_access_token_") || "";
 
@@ -26,8 +31,8 @@ export default function App() {
     });
     octokit
       .request("GET /repos/{owner}/{repo}/commits", {
-        owner: "jp024556",
-        repo: "Git-Commit-History"
+        owner: ownerName,
+        repo: repoName
       })
       .then((res) => {
         if (res.status === 200) {
