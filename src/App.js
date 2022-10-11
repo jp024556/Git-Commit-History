@@ -27,7 +27,7 @@ export default function App() {
     octokit
       .request("GET /repos/{owner}/{repo}/commits", {
         owner: "jp024556",
-        repo: "geeky"
+        repo: "Git-Commit-History"
       })
       .then((res) => {
         if (res.status === 200) {
